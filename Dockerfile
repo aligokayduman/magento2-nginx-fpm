@@ -45,8 +45,10 @@ RUN apt install -y libcurl4-openssl-dev \
                               zip \
                               json
                               
-# Install Nginx
-RUN apt install -y nginx 
+#Install Nginx
+RUN apt update \ 
+    && apt upgrade -y \
+    && apt install -y apt-utils apt-transport-https nginx
     
 # Tools Install
 RUN apt install -y nano htop iputils-ping
